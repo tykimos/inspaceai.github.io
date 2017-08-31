@@ -15,8 +15,8 @@ comments: true
 
 설치하고자 하는 환경에 맞는 파일을 다운로드 받습니다. 고용량이라 파일 다운로드 링크는 아래 댓글 창에 이메일을 남겨주시면 보내드리도록 하겠습니다. 요청하실 때 밑줄 친 파일명을 기입해주세요.
 
- * Windows 7 64비트: <u>keras\_offline\_win7.zip</u> (1.9GB)
- * Windows 10 64비트: <u>keras\_offline\_win10.zip</u> (1.9GB)
+ * Windows 7 64비트: <u>keras_offline_win7.zip</u> (1.9GB)
+ * Windows 10 64비트: <u>keras_offline_win10.zip</u> (1.9GB)
 
 설치 파일의 구성 요소는 다음과 같습니다.
 
