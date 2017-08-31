@@ -32,4 +32,5 @@ markdown: kramdown
 descriptions:
   - cat: Lecture
     desc: "Post about deep learning modeling"
-    
+
+future: true
