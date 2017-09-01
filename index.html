@@ -19,32 +19,28 @@ layout: default
       </li>
     {% endfor %}
   </ul>
-  <ul class="pagination clearfix">
-    {% if paginator.previous_page %}
-      {% if paginator.previous_page == 1 %}
-      <li><a href="/">Prev</a></li>
-      {% else %}
-      <li><a href="{{ site.baseurl }}/page{{ paginator.previous_page }}">Prev</a></li>
-      {% endif %}
+</div>
+<div class="pagination">
+  {% if paginator.previous_page and paginator.previous_page == 1 %}
+    <a href="{{ site.baseurl }}/page{{ paginator.previous_page }}">&laquo;</a>
+  {% else %}
+    <a href="{{ site.baseurl }}/">&laquo;</span>
+  {% endif %}
+  {% if paginator.page == 1 %}
+    <a class="active" href="#">1</a>
+  {% else %}
+    <a href="{{ site.baseurl }}/">1</a>
+  {% endif %}
+  {% for count in (2..paginator.total_pages) %}
+    {% if count == paginator.page %}
+    <a class="active" href="#">{{ count }}</span>
     {% else %}
-    <li><span class="disabled">Prev</span></li>
+    <a href="{{ site.baseurl }}/page{{ count }}">{{ count }}</a>
     {% endif %}
-    {% if paginator.page == 1 %}
-    <li><span class="active">1</span></li>
-    {% else %}
-    <li><a href="/">1</a></li>
-    {% endif %}
-    {% for count in (2..paginator.total_pages) %}
-      {% if count == paginator.page %}
-      <li><span class="active">{{ count }}</span></li>
-      {% else %}
-      <li><a href="{{ site.baseurl }}/page{{ count }}">{{ count }}</a></li>
-      {% endif %}
-    {% endfor %}
-    {% if paginator.next_page %}
-    <li><a href="{{ site.baseurl }}/page{{ paginator.next_page }}">Next</a></li>
-    {% else %}
-    <li><span class="disabled">Next</span></li>
-    {% endif %}
-  </ul>
+  {% endfor %}
+  {% if paginator.next_page %}
+    <a href="{{ site.baseurl }}/page{{ paginator.next_page }}">&raquo;</a>
+  {% else %}
+    <a href="#">Next</span>
+  {% endif %}
 </div>

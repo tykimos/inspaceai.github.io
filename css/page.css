@@ -85,6 +85,24 @@
 		margin-top:-20px;
 		font-size:16px;
 	}
+	
+
+	.pagination {
+		display: inline-block;
+	}
+	
+	.pagination a {
+		color: black;
+		float: left;
+		padding: 8px 16px;
+		text-decoration: none;
+	}
+	
+	.pagination a.active {
+		background-color: #4CAF50;
+		color: white;
+	}
+	
 	.link a:hover {
 		padding-left:0;
 	}
@@ -150,3 +168,4 @@
 	.category-box-sub a:hover,.category-sub-title:hover {
 		padding-left:0;
 	}
+}
