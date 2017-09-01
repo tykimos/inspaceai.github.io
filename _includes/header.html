@@ -1,34 +1,68 @@
-<!-- Header Start -->
-<header>
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <!-- header Nav Start -->
-      <nav class="navbar navbar-default">
-        <div class="container-fluid">
-          <!-- Brand and toggle get grouped for better mobile display -->
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            </button>
-            <span class="navbar-brand">
-              <img src="{{ site.baseurl }}/img/logo.png" alt="Logo">
-            </span>
-          </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-              <ul class="nav navbar-nav navbar-right">
-                <li><a href="{{ site.baseurl }}/">Home</a></li>
-                <li><a href="{{ site.baseurl }}/blog">Blog</a></li>
-                <li><a href="{{ site.baseurl }}/contact">Contact</a></li>
-              </ul>
-            </div><!-- /.navbar-collapse -->
-          </div><!-- /.container-fluid -->
-        </nav>
-      </div>
-    </div>
-  </div>
-</header><!-- header close -->
+<header class="header">
+	<div class="header-container">
+		<div class="nav">
+			{% if page.path == "index.html" %}
+			<span class="title">
+				<li>
+					<a href="/index.html">home</a>
+				</li>
+			</span>			
+			{% else %}
+				<li>
+					<a href="/index.html">home</a>
+				</li>			
+			{% endif %}
+			{% if page.path == "archive.html" %}
+			<span class="title">
+				<li>
+					<a href="/archive.html">archive</a>
+				</li>
+			</span>			
+			{% else %}
+				<li>
+					<a href="/archive.html">archive</a>
+				</li>			
+			{% endif %}
+			{% if page.path == "category.html" %}
+			<span class="title">
+				<li>
+					<a href="/category.html">category</a>
+				</li>
+			</span>			
+			{% else %}
+				<li>
+					<a href="/category.html">category</a>
+				</li>			
+			{% endif %}
+			{% if page.path == "about.html" %}
+			<span class="title">
+				<li>
+					<a href="/about.html">about</a>
+				</li>
+			</span>			
+			{% else %}
+				<li>
+					<a href="/about.html">about</a>
+				</li>			
+			{% endif %}
+		</div>
+		<div class="description"> {{ site.motto }} </div>		
+		<ul class="social-links">
+			<li>
+				<a href="https://github.com/{{ site.github_username }}" title="Github">
+					<img width="19px" height="19px" src="/images/github.png"/>
+				</a>
+			</li>
+			<li>
+				<a href="/feed.xml" title="RSS">
+					<img width="19px" height="19px" src="/images/rss.png"/>
+				</a>
+			</li>
+			<li>
+				<a href="https://twitter.com/{{ site.twitter_username }}" title="Twitter">
+					<img width="19px" height="19px" src="/images/twitter.png"/>
+				</a>
+			</li>
+		</ul>		
+	</div>
+</header>
