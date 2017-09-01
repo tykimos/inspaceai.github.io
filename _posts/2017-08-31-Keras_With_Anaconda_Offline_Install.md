@@ -2,7 +2,7 @@
 layout: post
 title: "아나콘다 가상 환경에 텐서플로우, 케라스 오프라인 설치"
 author: "Hansol, Jeong"
-date: 2017-08-31 12:00:00
+date: 2017-09-01 15:00:00
 categories: Lecture
 comments: true
 ---

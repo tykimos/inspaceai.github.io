@@ -2,12 +2,9 @@
 title: InSpace
 url: "https://inspace4u.github.io/dllab"
 baseurl: "/dllab"
-motto: Your motto
+motto: Insight In Space
 email: inspace.co.kr
-description: > # this means to ignore newlines until "baseurl:"
-  Insight In Space
-#twitter_username: jekyllrb
-github_username:  inspace4u
+description: Insight In Space
 
 # Build settings
 markdown: kramdown
