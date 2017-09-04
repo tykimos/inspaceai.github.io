@@ -1,22 +1,21 @@
 ---
 layout: post
-title: "아나콘다 가상 환경에 텐서플로우, 케라스 오프라인 설치"
-author: "Hansol, Jeong"
-date: 2017-09-01 15:00:00
+title: "Windows 10에서 텐서플로우, 케라스 오프라인 설치"
+author: "정한솔"
+date: 2017-09-04 12:00:00
 categories: Lecture
 comments: true
 ---
 
-본 강좌에서는 텐서플로우, 케라스를 오프라인으로 설치해보겠습니다. 보안 문제로 망분리된 서버나 워크스테이션에서 딥러닝 모델을 사용하려면 오프라인 설치가 필요합니다. '설치 준비' 파트에서 원하시는 환경에 맞는 파일을 다운로드 받아서, '설치 방법' 파트의 설명을 따라 순서대로 설치하시면 됩니다. 
+본 포스트에서는 Windows 10 환경에서 텐서플로우, 케라스를 오프라인으로 설치하는 방법에 대해서 설명하겠습니다. 보안 문제로 망분리된 서버나 워크스테이션에서 딥러닝 모델을 사용하려면 오프라인 설치가 필요합니다. '설치 준비' 파트에서 설치 파일을 다운로드 받고 '설치 방법' 파트의 설명을 따라 순서대로 설치하시면 됩니다.
 
 ---
 
 ### 설치 준비
 
-설치하고자 하는 환경에 맞는 파일을 다운로드 받습니다. 고용량이라 파일 다운로드 링크는 아래 댓글 창에 이메일을 남겨주시면 보내드리도록 하겠습니다. 요청하실 때 밑줄 친 파일명을 기입해주세요.
+필요한 오프라인 파일을 미리 다운로드 받아 준비하여야 합니다. 고용량이라 파일 다운로드 링크는 아래 댓글 창에 이메일을 남겨주시면 보내드리도록 하겠습니다.
 
- * Windows 7 64비트: <u>keras_offline_win7.zip</u> (1.9GB)
- * Windows 10 64비트: <u>keras_offline_win10.zip</u> (1.9GB)
+ * <u>keras_offline_win10.zip</u> (1.9GB)
 
 설치 파일의 구성 요소는 다음과 같습니다.
 
@@ -38,25 +37,18 @@ comments: true
 
 C 드라이브 아래에 Projects 폴더를 생성하고 Projects 폴더 아래에 anaconda\_keras 폴더를 생성합니다. 이 폴더를 작업용 폴더로 사용하겠습니다. (C:\Projects\anaconda\_keras) 생성된 작업용 폴더 아래에 keras\_offline\_win7.zip 또는 keras\_offline\_win10.zip 파일을 복사하여 압축을 해제합니다. 다음과 같은 파일이 들어 있습니다.
 
- * keras\_offline\_win7.zip
-   * C:\Projects\anaconda\_keras\keras\_offline\_win7\Anaconda3-4.4.0-Windows-x86\_64.exe
-   * C:\Projects\anaconda\_keras\keras\_offline\_win7\conda-pip-packages.zip
-   * C:\Projects\anaconda\_keras\keras\_offline\_win7\cuda\_8.0.61.2\_windows.exe
-   * C:\Projects\anaconda\_keras\keras\_offline\_win7\cuda\_8.0.61\_windows.exe
-   * C:\Projects\anaconda\_keras\keras\_offline\_win7\cudnn-8.0-windows7-x64-v6.0.zip
- * keras\_offline\_win10.zip
-   * C:\Projects\anaconda\_keras\keras\_offline\_win10\Anaconda3-4.4.0-Windows-x86\_64.exe
-   * C:\Projects\anaconda\_keras\keras\_offline\_win10\conda-pip-packages.zip
-   * C:\Projects\anaconda\_keras\keras\_offline\_win10\cuda\_8.0.61.2\_windows.exe
-   * C:\Projects\anaconda\_keras\keras\_offline\_win10\cuda\_8.0.61\_win10.exe
-   * C:\Projects\anaconda\_keras\keras\_offline\_win10\cudnn-8.0-windows10-x64-v6.0.zip
+ * C:\Projects\anaconda\_keras\keras\_offline\_win10\Anaconda3-4.4.0-Windows-x86\_64.exe
+ * C:\Projects\anaconda\_keras\keras\_offline\_win10\conda-pip-packages.zip
+ * C:\Projects\anaconda\_keras\keras\_offline\_win10\cuda\_8.0.61.2\_windows.exe
+ * C:\Projects\anaconda\_keras\keras\_offline\_win10\cuda\_8.0.61\_win10.exe
+ * C:\Projects\anaconda\_keras\keras\_offline\_win10\cudnn-8.0-windows10-x64-v6.0.zip
 
 #### 필수 프로그램 설치
 
 CUDA Toolkit, cuDNN, Anaconda를 컴퓨터에 설치하겠습니다. CPU 전용 Tensorflow를 설치하고자 하는 경우 CUDA Toolkit, cuDNN 설치는 건너뛰셔도 됩니다. 또한 CUDA Toolkit, cuDNN의 경우 운영체제에 따라 설치 파일 이름이 다르므로 자신이 가지고 있는 파일 하나만 확인하시면 됩니다.
 
  * CUDA Toolkit 설치
-   1. cuda\_8.0.61\_windows.exe 또는 cuda\_8.0.61\_win10.exe 을 실행하여 CUDA Toolkit을 설치합니다.
+   1. cuda\_8.0.61\_win10.exe을 실행하여 CUDA Toolkit을 설치합니다.
    2. cuda\_8.0.61.2\_windows.exe를 실행하여 CUDA Toolkit 업데이트를 추가 설치합니다.
 
 |원본경로|대상경로|
@@ -66,9 +58,9 @@ CUDA Toolkit, cuDNN, Anaconda를 컴퓨터에 설치하겠습니다. CPU 전용 
 |\cuda\lib\x64|C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\lib\x64|
 
  * cuDNN 설치
-   1. cudnn-8.0-windows7-x64-v6.0.zip 또는 cudnn-8.0-windows10-x64-v6.0.zip 을 압축 해제하고, 압축 해제한 폴더에서 위 표와 같이 파일을 복사합니다.
+   1. cudnn-8.0-windows10-x64-v6.0.zip 을 압축 해제하고, 압축 해제한 폴더에서 위 표와 같이 파일을 복사합니다.
 
-![anaconda_install_type](http://i.imgur.com/cTM5RJN.png)
+![anaconda_install_type]({{ "/images/2017-09-04-anaconda.png" | prepend: site.baseurl }})
 
  * Anaconda 설치 
    1. Anaconda3-4.4.0-Windows-x86\_64.exe를 실행하여 Anaconda를 설치합니다. 설치 타입은 Just Me (recommended)를 선택합니다.
@@ -91,8 +83,7 @@ CUDA Toolkit, cuDNN, Anaconda를 컴퓨터에 설치하겠습니다. CPU 전용 
 아무것도 설치되어 있지 않은 빈 환경 venv를 생성하고 활성화하였습니다. 생성 도중 오류가 몇개 발생하나 무시해도 됩니다. 그리고 conda-pip-packages.zip 파일의 압축을 해제합니다. conda-pip-packages 폴더 아래에 conda, pip 폴더 두가지가 생성됩니다. cd 명령어를 이용해 압축을 푼 폴더 안으로 이동합니다.
 
 ```
-(venv) C:\Users\user> cd "C:\Projects\anaconda_keras\keras_offline_win7\conda-pip-packages"    (Windows 7인 경우)
-(venv) C:\Users\user> cd "C:\Projects\anaconda_keras\keras_offline_win10\conda-pip-packages"    (Windows 10인 경우)
+(venv) C:\Users\user> cd "C:\Projects\anaconda_keras\keras_offline_win10\conda-pip-packages"
 ```
 
 운영체제에 따라 위 두 명령어 중 하나를 입력합니다.
@@ -128,4 +119,4 @@ Python 인터프리터를 실행하여 Keras를 임포트해 봅니다. Using Te
 Using TensorFlow backend.
 ```
 
-![testkeras](http://i.imgur.com/KPcHPJT.png)
+![testkeras]({{ "/images/2017-09-04-python.png" | prepend: site.baseurl }})
