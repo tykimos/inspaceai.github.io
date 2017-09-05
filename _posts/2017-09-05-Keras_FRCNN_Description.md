@@ -21,7 +21,7 @@ pascal_voc_parser.py는 [PASCAL VOC Dataset](http://host.robots.ox.ac.uk/pascal/
 <annotation>
   <folder>VOC2012</folder>
   <filename>2007_000027.jpg</filename>
-(...중략...)
+<!-- 중략 -->
   <object>
     <name>person</name>
     <pose>Unspecified</pose>
@@ -33,7 +33,7 @@ pascal_voc_parser.py는 [PASCAL VOC Dataset](http://host.robots.ox.ac.uk/pascal/
         <xmax>349</xmax>
         <ymax>351</ymax>
     </bndbox>
-(...후략...)
+<!-- 후략 -->
 ```
 
 folder와 filename 태그를 통해 대응되는 이미지를 지정하며, object 태그는 해당 이미지 안의 객체 하나를 의미합니다. name 태그로 객체의 종류를 지정하며 bndbox 태그로 객체의 위치를 지정합니다.
@@ -109,21 +109,21 @@ def rpn_to_roi(rpn_layer, regr_layer, C, dim_ordering, use_regr=True, max_boxes=
   anchor_sizes = C.anchor_box_scales
   anchor_ratios = C.anchor_box_ratios
 
-(...중략...)
+# 중략
 
   for anchor_size in anchor_sizes:
     for anchor_ratio in anchor_ratios:
       anchor_x = (anchor_size * anchor_ratio[0])/C.rpn_stride
       anchor_y = (anchor_size * anchor_ratio[1])/C.rpn_stride
 
-(...중략...)
+# 중략
 
       curr_layer += 1
 
   all_boxes = np.reshape(A.transpose((0, 3, 1,2)), (4, -1)).transpose((1, 0))
   all_probs = rpn_layer.transpose((0, 3, 1, 2)).reshape((-1))
 
-(...중략...)
+# 중략
 
   result = non_max_suppression_fast(all_boxes, all_probs, overlap_thresh=overlap_thresh, max_boxes=max_boxes)[0]
   return result
@@ -146,7 +146,7 @@ for ii in range(P_cls.shape[1]):
     
   (x, y, w, h) = ROIs[0, ii, :]
 
-(...중략...)
+# 중략
 
   bboxes[cls_name].append([C.rpn_stride*x, C.rpn_stride*y, C.rpn_stride*(x+w), C.rpn_stride*(y+h)])
   probs[cls_name].append(np.max(P_cls[0, ii, :]))
