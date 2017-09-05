@@ -17,7 +17,7 @@ comments: true
 
 pascal_voc_parser.py는 [PASCAL VOC Dataset](http://host.robots.ox.ac.uk/pascal/VOC/)의 규격에 맞춰 데이터셋을 파싱합니다. PASCAL VOC Dataset은 모델 루트 폴더 안의 Annotations 폴더 안의 xml 파일들이 이미지의 레이블을 제공하고, JPEGImages 폴더 안에 실제 이미지가 존재하여 이 둘이 대응됩니다. PASCAL VOC Dataset은 객체 안의 부위 분류(예컨대 사람 객체 안의 머리, 손, 다리)와 이미지 분할을 위한 분류도 제공하지만 이 코드는 단순 객체 검출이라 사용하지 않습니다. xml 파일의 일부를 소개하면 다음과 같습니다.
 
-```
+```xml
 <annotation>
   <folder>VOC2012</folder>
   <filename>2007_000027.jpg</filename>
@@ -54,7 +54,7 @@ Faster R-CNN은 Fast R-CNN 대비, 영역 제안을 딥러닝 모델을 통한 �
 
 모델의 구성은 위와 같습니다. 입력값은 물체를 검출할 대상 이미지이며, 출력값은 특징 지도(feature map), 물체 분류 2가지와 그 회귀(regression) 값 4가지로 구성됩니다. 이 모델을 한번에 가동하는 것이 아니라 모델을 여러 단계로 분할하여 단계적으로 훈련 및 예측이 실행되게 됩니다.
 
-```
+```python
 # define the base network (resnet here, can be VGG, Inception, etc)
 shared_layers = nn.nn_base(img_input, trainable=True)
 
@@ -85,7 +85,7 @@ model_classifier는 이미지와 영역을 입력으로 받아 영역 내의 이
 
 ### 훈련과 예측
 
-```
+```python
 img = cv2.imread(filepath)
 X, ratio = format_img(img, C)
 if K.image_dim_ordering() == 'tf':
@@ -101,7 +101,7 @@ R = roi_helpers.rpn_to_roi(Y1, Y2, C, K.image_dim_ordering(), overlap_thresh=0.7
 
 이 확률 배열을 이용해서 관심 영역을 추출하게 되는데, 이 과정은 rpn_to_roi 함수가 실행합니다.
 
-```
+```python
 def rpn_to_roi(rpn_layer, regr_layer, C, dim_ordering, use_regr=True, max_boxes=300,overlap_thresh=0.9):
 
   regr_layer = regr_layer / C.std_scaling
@@ -131,7 +131,7 @@ def rpn_to_roi(rpn_layer, regr_layer, C, dim_ordering, use_regr=True, max_boxes=
 
 그리고 각 블럭에 대해서, 그 블럭을 중심으로 비율이 1:1 또는 가로 또는 세로가 긴 2:1 비율인 3가지 비율, 짧은 길이가 8블럭인 경우, 16블럭인 경우, 32블럭인 경우인 3가지 크기로 영역을 추출합니다. 추출할 영역의 비율과 크기는 위 코드에서 anchor_box_scales와 anchor_box_ratios에 정의되어 있습니다. 이 과정을 거치면 각 블럭당 9개의 영역이 추출되어 총 17100개의 영역이 나옵니다. 당연히 모든 영역에 대해서 분류를 실행할 수는 없는 만큼 가능성이 높은 경계 상자만 남겨야 합니다. 이를 위해 각 영역 내의 물체 확률 중 가장 높은 값을 해당 영역에 물체가 존재할 확률로 간주하고 비최대값 억제(NMS) 알고리즘을 사용합니다. 이때 300개 초과 영역이 남은 경우 물체 존재 확률이 낮은 초과 분량을 모두 제거하고 상위 300개의 영역만을 반환합니다.
 
-```
+```python
 [P_cls, P_regr] = model_classifier_only.predict([F, ROIs])
 
 for ii in range(P_cls.shape[1]):
