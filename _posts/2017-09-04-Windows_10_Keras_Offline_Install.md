@@ -120,3 +120,9 @@ Using TensorFlow backend.
 ```
 
 ![testkeras]({{ "/images/2017-09-04-python.png" | prepend: site.baseurl }})
+
+(2017/09/19 추가) 설치 후에 import keras를 할때 NumPy 관련 오류가 나는 경우가 있습니다. 그런 경우 pip 폴더에서 다음 명령어를 입력해 NumPy를 재설치 해 보시기 바랍니다. (성선경님 감사합니다)
+
+```
+pip install numpy-1.13.1-cp35-none-win_amd64.whl
+```
