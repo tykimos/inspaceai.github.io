@@ -68,7 +68,7 @@ idxs 배열 안의 요소 중 가장 마지막의 원소는 확률값이 가장 
             yy2 = min(y2[i], y2[j])
             w = max(0, xx2 - xx1)
             h = max(0, yy2 - yy1)
-            overlap = float(w * h) / area[j]
+            overlap = (w * h) / area[j]
             if overlap > overlap_thresh:
                 suppress.append(pos)
 ```
