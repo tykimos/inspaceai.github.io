@@ -83,7 +83,7 @@ C:\Projects\anaconda_keras\keras_offline_win10\pip-packages> pip install --no-in
 만약 CPU 전용 텐서플로우를 사용하기를 원하는 경우 마지막 명령어 한 줄 대신 다음 명령어를 입력합니다.
 
 ```
-C:\Projects\anaconda_keras\keras_offline_win10\conda-pip-packages> pip install --no-index --find-links=. tensorflow keras opencv-python h5py pydot
+C:\Projects\anaconda_keras\keras_offline_win10\pip-packages> pip install --no-index --find-links=. tensorflow keras opencv-python h5py pydot
 ```
 
 tensorflow 패키지 이름에서 -gpu가 사라졌음을 주의하시기 바랍니다.
@@ -101,7 +101,7 @@ Using TensorFlow backend.
 ![testkeras]({{ "/images/2017-09-04-python.png" | prepend: site.baseurl }})
 
 설치 후에 import keras를 할때 NumPy 관련 오류가 나는 경우가 있습니다. 그런 경우 pip 폴더에서 다음 명령어를 입력해 NumPy를 재설치 해 보시기 바랍니다. (성선경님 감사합니다)
-cudnn-8.0-windows10-x64-v6.0.zip
+
 ```
 pip install numpy-1.13.1-cp35-none-win_amd64.whl
 ```
