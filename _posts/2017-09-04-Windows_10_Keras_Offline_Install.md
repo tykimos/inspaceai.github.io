@@ -7,7 +7,7 @@ categories: Lecture
 comments: true
 ---
 
-Jupyter Notebook 등의 추가 패키지를 포함한 오프라인 설치 방법을 새로 포스팅했습니다. 새로 포스팅된 [Windows 10에서 텐서플로우, 케라스 오프라인 설치 2]({{ "lecture/2017/10/13/Windows_10_Keras_Offline_Install.html" | prepend: site.baseurl }})를 참조하시기 바랍니다.
+Jupyter Notebook 등의 추가 패키지를 포함한 오프라인 설치 방법을 새로 포스팅했습니다. 새로 포스팅된 [Windows 10에서 텐서플로우, 케라스 오프라인 설치 2]({{ "/lecture/2017/10/13/Windows_10_Keras_Offline_Install.html" | prepend: site.baseurl }})를 참조하시기 바랍니다.
 
 ---
 
