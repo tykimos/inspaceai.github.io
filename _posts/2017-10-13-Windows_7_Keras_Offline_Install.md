@@ -91,7 +91,7 @@ C:\Projects\anaconda_keras\keras_offline_win7\pip-packages> pip install --no-ind
 만약 CPU 전용 텐서플로우를 사용하기를 원하는 경우 마지막 명령어 한 줄 대신 다음 명령어를 입력합니다.
 
 ```
-C:\Projects\anaconda_keras\keras_offline_win7\pip-packages> pip install --no-index --find-links=. tensorflow keras opencv-python h5py pydot
+C:\Projects\anaconda_keras\keras_offline_win7\pip-packages> pip install --no-index --find-links=. tensorflow keras opencv-python h5py pydot pillow
 ```
 
 tensorflow 패키지 이름에서 -gpu가 사라졌음을 주의하시기 바랍니다.
