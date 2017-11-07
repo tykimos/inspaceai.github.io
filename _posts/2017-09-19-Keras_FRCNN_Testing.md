@@ -13,7 +13,7 @@ comments: true
 
 ### 실행 환경
 
-이 예제에서는 기본적인 Tensorflow와 Keras 이외에 이미지 처리를 위한 [OpenCV](http://opencv.org/) 라이브러리와 대용량 데이터를 다루는 포맷인 hdf5를 지원하기 위한 [h5py](http://www.h5py.org/) 패키지가 추가로 필요합니다. 만약 [Windows 10에서 텐서플로우, 케라스 오프라인 설치]({{ "lecture/2017/09/04/Windows_10_Keras_Offline_Install.html" | prepend: site.baseurl }}) 또는 [Windows 7]({{ "lecture/2017/09/04/Windows_7_Keras_Offline_Install.html" | prepend: site.baseurl }}) 포스트의 설명을 따라 환경을 구축하셨다면, 이 두 패키지가 포함되어 있지 않습니다. 그 경우에는 시작 메뉴에서 "Anaconda Prompt"를 검색하여 실행하고 콘솔 창에 아래의 명령어를 입력합니다.
+이 예제에서는 기본적인 Tensorflow와 Keras 이외에 이미지 처리를 위한 [OpenCV](http://opencv.org/) 라이브러리와 대용량 데이터를 다루는 포맷인 hdf5를 지원하기 위한 [h5py](http://www.h5py.org/) 패키지가 추가로 필요합니다. 만약 [Windows 10에서 텐서플로우, 케라스 오프라인 설치]({{ "lecture/2017/10/13/Windows_10_Keras_Offline_Install.html" | prepend: site.baseurl }}) 또는 [Windows 7]({{ "lecture/2017/10/13/Windows_7_Keras_Offline_Install.html" | prepend: site.baseurl }}) 포스트의 설명을 따라 환경을 구축하셨다면, 이 두 패키지가 포함되어 있지 않습니다. 그 경우에는 시작 메뉴에서 "Anaconda Prompt"를 검색하여 실행하고 콘솔 창에 아래의 명령어를 입력합니다.
 
 ```
 (C:\Users\user\Anaconda3) C:\Users\user> activate venv

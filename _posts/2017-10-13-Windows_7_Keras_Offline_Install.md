@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Windows 7에서 텐서플로우, 케라스 오프라인 설치 2"
+title: "Windows 7에서 텐서플로우, 케라스 오프라인 설치"
 author: "정한솔"
 date: 2017-10-13 14:00:00
 categories: Lecture
@@ -106,4 +106,4 @@ C:\Projects\anaconda_keras\keras_offline_win7\conda-pip-packages> python
 Using TensorFlow backend.
 ```
 
-![testkeras]({{ "/images/2017-09-04-python.png" | prepend: site.baseurl }})
+![testkeras]({{ "/images/2017-10-12-python.png" | prepend: site.baseurl }})
