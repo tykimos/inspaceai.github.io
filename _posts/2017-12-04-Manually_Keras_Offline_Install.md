@@ -7,6 +7,8 @@ categories: Lecture
 comments: true
 ---
 
+ * 2018/2/20 최신 버전인 tensorflow 1.5에 맞게 포스트 내용을 약간 수정하였습니다.
+
 [Windows 7]({{ "/lecture/2017/10/13/Windows_7_Keras_Offline_Install.html" | prepend: site.baseurl }}) 또는 [Windows 10에서 텐서플로우, 케라스 오프라인 설치]({{ "/lecture/2017/10/13/Windows_10_Keras_Offline_Install.html" | prepend: site.baseurl }}) 포스트에서 Windows에서 텐서플로우, 케라스를 오프라인 설치하는 방법에 대해서 이미 설명하고 있습니다.
 
 이 포스트에서는 해당 포스트에서 배포해드리고 있는 설치 파일을 직접 다운로드 받는 방법에 대해 설명드리겠습니다. 제가 보내드리는 패키지보다 최신 버전의 라이브러리를 사용하고 싶거나, 패키지의 구성을 바꾸고 싶거나, 제가 메일을 보내드리는 시간 없이 바로 오프라인 설치 파일이 필요할 경우 이 방법을 사용하시기 바랍니다.
@@ -17,9 +19,9 @@ comments: true
 
 ### CUDA
 
-nVIDIA GPU에서 CUDA를 통해 텐서플로우를 가속하고자 하시는 경우 CUDA 툴킷과 cuDNN 라이브러리가 필요합니다. 현재 CUDA의 최신 버전은 9.0이지만, [현재 텐서플로우에서는 8.0 버전만을 지원](https://www.tensorflow.org/install/install_windows)하므로 구 버전을 찾아서 다운로드 받으셔야 합니다. CUDA 8.0 다운로드는 [이곳](https://developer.nvidia.com/cuda-80-ga2-download-archive)에서 다운로드 받으실 수 있습니다. 원하시는 운영체제를 선택하시고 인스톨러를 다운로드 받되 Installer Type은 반드시 exe (local)을 선택하시기 바랍니다.
+nVIDIA GPU에서 CUDA를 통해 텐서플로우를 가속하고자 하시는 경우 CUDA 툴킷과 cuDNN 라이브러리가 필요합니다. 현재 CUDA의 최신 버전은 9.1이지만, [현재 텐서플로우 바이너리에서는 9.0을 사용](https://github.com/tensorflow/tensorflow/releases/tag/v1.5.0)하므로 구 버전을 찾아서 다운로드 받으셔야 합니다. CUDA 9.0 다운로드는 [이곳](https://developer.nvidia.com/cuda-90-download-archive)에서 다운로드 받으실 수 있습니다. 원하시는 운영체제를 선택하시고 인스톨러를 다운로드 받되 Installer Type은 반드시 exe (local)을 선택하시기 바랍니다.
 
-cuDNN은 [이곳](https://developer.nvidia.com/cudnn)에서 다운로드 받으실 수 있는데 NVIDIA 개발자 계정으로 로그인을 할 필요가 있습니다. 가입은 무료이며 이메일과 간략한 설문조사 외에 요구받는 것은 없습니다. cuDNN의 최신 버전은 7.0인데 역시나 텐서플로우가 지원하지 않으므로 6.0 버전을 설치하셔야 합니다. CUDA 8.0을 위한 cuDNN 6.0 라이브러리를 찾아 자신에게 맞는 운영체제를 선택하여 다운로드 받습니다.
+cuDNN은 [이곳](https://developer.nvidia.com/cudnn)에서 다운로드 받으실 수 있는데 NVIDIA 개발자 계정으로 로그인을 할 필요가 있습니다. 가입은 무료이며 이메일과 간략한 설문조사 외에 요구받는 것은 없습니다. cuDNN의 최신 버전은 7.0이므로 CUDA 9.0을 위한 cuDNN 7.0 라이브러리를 찾아 자신에게 맞는 운영체제를 선택하여 다운로드 받습니다.
 
 ---
 
@@ -74,4 +76,7 @@ conda install pip
 pip download tensorflow tensorflow-gpu keras opencv-python h5py pydot pillow
 ```
 
-pip를 통한 다운로드가 잘 되지 않거나 좀더 최적화된 바이너리가 필요한 경우 [UCI](https://uci.edu/) [LFD](https://www.lfd.uci.edu/)에서 제공하는 [비공식 Python 패키지 바이너리](https://www.lfd.uci.edu/~gohlke/pythonlibs/)를 참고하시면 도움이 될 수 있습니다.
+2018년 2월 현재 안정 버전의 pip에는 인코딩 관련 버그가 있어 위 다운로드 명령이 잘 실행되지 않을 수 있습니다. 이 경우 다음 선택지를 시험해보시기 바랍니다.
+
+ * 최신 베타 버전을 설치합니다. 다음 명령어를 사용하시면 됩니다: `pip install --upgrade git+https://github.com/pypa/pip.git`
+ * UCI LFD에서 제공하는 [사전 컴파일된 비공식 바이너리](https://www.lfd.uci.edu/~gohlke/pythonlibs/)를 다운받아 사용합니다.
