@@ -13,7 +13,7 @@ comments: true
 
 다운로드를 위해 오프라인 설치를 원하시는 환경과 같은 운영체제가 설치되고 인터넷에 연결되어 있는 다운로드용 환경을 준비합니다. 아래의 작업은 모두 다운로드용 환경에서 시행하시면 되며 USB 메모리 등 오프라인 저장 매체를 사용하여 오프라인 환경으로 옮기신 다음 위 포스트의 설치 방법을 따라 설치하시면 됩니다. 단 제가 포스트를 작성했을 때와 비교하여 패키지들의 버전이 업데이트되어 있을 수 있고 따라서 패키지 파일 명이 달라질 수 있음을 유의하시기 바랍니다.
 
- * 2018/2/20 최신 버전인 tensorflow 1.5에 맞게 포스트 내용을 약간 수정하였습니다.
+ * 2018/2/20 변경된 설치 방법 및 업데이트된 최신 패키지 버전에 맞춰 포스트 내용을 수정하였습니다.
 
 ---
 
@@ -25,58 +25,26 @@ cuDNN은 [이곳](https://developer.nvidia.com/cudnn)에서 다운로드 받으�
 
 ---
 
-### Anaconda
+### Python
 
-[이곳](https://conda.io/miniconda.html)에서 미니콘다를 다운로드 받아 설치합니다. 미니콘다는 아나콘다에 함께 포함된 많은 각종 수학, 과학 계산 패키지들을 제외하고 오직 아나콘다 본체만 설치할 수 있도록 한 버전입니다. 예전에 작성된 텐서플로우 설치 가이드 중에서는 Windows에서 텐서플로우가 Python 3.6을 지원하지 않는다는 말이 있는데 현재는 지원하므로 최신 3.6 버전을 다운로드 받아도 괜찮습니다.
+파이썬은 풍부한 계산 라이브러리를 가지고 있어 딥 러닝, 머신 러닝 관련 알고리즘을 개발 또는 구현하는데 널리 사용되고 있습니다. 텐서플로우 및 케라스도 파이썬으로 작성된 라이브러리입니다.
 
-아나콘다는 오프라인을 통한 패키지 설치 기능 지원이 빈약한 편입니다. 오프라인 패키지를 별도로 다운로드 받는 기능이 없어 한번 설치한 다음에 캐시 디렉토리에서 꺼내와야 하며, 로컬에서 패키지 의존을 추적하는 기능이 불완전해 모든 패키지를 하나 하나 수동으로 설치해야 합니다. 다행히도 [constructor](https://github.com/conda/constructor)라는 툴에서 아나콘다 본체와 지정된 아나콘다 패키지와 그 의존 패키지를 모두 묶어서 하나의 인스톨러로 내보내는 기능을 제공합니다. 이 툴을 사용하면 오프라인 환경에서 아나콘다 환경을 한번에 구축하는 인스톨러를 생성할 수 있습니다.
-
-시작 메뉴에서 Anaconda Prompt를 검색하여 실행한 다음에 다음 명령어를 차례대로 입력합니다.
-
-```
-conda create --name constructor
-activate constructor
-conda install constructor
-```
-
-그리고 빈 작업 폴더를 하나 만들고 그 작업 폴더 안으로 이동합니다. 그 작업 폴더 아래에 construct.yaml 파일을 하나 생성합니다. 이 파일은 인스톨러에 포함될 아나콘다 패키지에 관련된 정보를 담고 있어야 합니다. 제가 사용한 construct.yaml 파일의 내용은 아래와 같습니다.
-
-```yaml
-name: InspaceDllab
-version: 1.1.0
-
-channels:
-  - http://repo.continuum.io/pkgs/free/
-
-specs:
-  - python
-  - conda
-  - pip
-  - pandas
-  - matplotlib
-  - jupyter
-  - notebook
-  - scikit-learn
-```
-
-추가로 필요한 패키지가 있으면 specs 아래에 추가할 수 있습니다. 작성한 construct.yaml 파일을 저장한 후 콘솔창에 다음 명령어를 입력하면 인스톨러가 생성됩니다. 다운로드 및 인스톨러 생성에 약간 시간이 걸릴 수 있습니다.
-
-```
-constructor .
-```
+[이곳](https://www.python.org/downloads/windows/)에서 파이썬 최신 버전을 다운로드 받으실 수 있습니다. 반드시 x86-64 excutable installer를 선택하셔야 합니다. 아래의 pip 패키지를 다운로드 받기 위해 다운로드용 환경에도 파이썬을 설치하셔야 합니다. 설치 과정 중 Add Python 3.6 to PATH의 체크 박스는 체크를 하고 진행하시기 바랍니다.
 
 ---
 
 ### pip
 
-pip는 오프라인 설치를 위해 패키지와 관련 의존을 자동으로 다운로드 받는 기능을 제공하기 때문에 과정이 간단합니다. 우선 미니콘다 초기 상태에서는 pip조차 설치되어 있지 않기 때문에 pip 를 먼저 설치하고 난 다음에 pip download 명령을 통해 필요 패키지를 다운로드 받으실 수 있습니다.
+시작 메뉴에서 `cmd`를 입력하여 명령 프롬프트를 실행한 뒤 다음 명령어를 실행하여 패키지를 다운로드 받으실 수 있습니다.
 
 ```
-conda install pip
-pip download tensorflow tensorflow-gpu keras opencv-python h5py pydot pillow
+python -m pip download tensorflow tensorflow-gpu keras jupyter opencv-python h5py pydot pillow matplotlib
 ```
 
-2018년 2월 현재 안정 버전의 pip에는 인코딩 관련 버그가 있어 위 다운로드 명령이 잘 실행되지 않을 수 있습니다. 이 경우 다음 선택지를 시험해보시기 바랍니다.
+pip에는 인코딩 관련 버그가 있어 위 다운로드 명령이 잘 실행되지 않을 수 있습니다. 이 경우 최신 베타 버전을 설치해서 재시도 해 보시기 바랍니다. [git](https://git-scm.com/)을 시스템에 설치하고 다음 명령어를 사용하시면 됩니다.
 
- * 최신 베타 버전을 설치합니다. 다음 명령어를 사용하시면 됩니다: `pip install --upgrade git+https://github.com/pypa/pip.git`
- * UCI LFD에서 제공하는 [사전 컴파일된 비공식 바이너리](https://www.lfd.uci.edu/~gohlke/pythonlibs/)를 다운받아 사용합니다.
+```
+python -m pip install --upgrade git+https://github.com/pypa/pip.git`
+```
+
+matplotlib를 사용하기 위해서는 시스템에 Visual C++ 2010 런타임 라이브러리를 설치할 필요성이 있습니다. [이곳](https://www.microsoft.com/en-us/download/details.aspx?id=14632)에서 다운로드 받으시면 됩니다.
