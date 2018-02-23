@@ -44,7 +44,7 @@ python -m pip download tensorflow tensorflow-gpu keras jupyter opencv-python h5p
 pip에는 인코딩 관련 버그가 있어 위 다운로드 명령이 잘 실행되지 않을 수 있습니다. 이 경우 최신 베타 버전을 설치해서 재시도 해 보시기 바랍니다. [git](https://git-scm.com/)을 시스템에 설치하고 다음 명령어를 사용하시면 됩니다.
 
 ```
-python -m pip install --upgrade git+https://github.com/pypa/pip.git`
+python -m pip install --upgrade git+https://github.com/pypa/pip.git
 ```
 
 matplotlib를 사용하기 위해서는 시스템에 Visual C++ 2010 런타임 라이브러리를 설치할 필요성이 있습니다. [이곳](https://www.microsoft.com/en-us/download/details.aspx?id=14632)에서 다운로드 받으시면 됩니다.
