@@ -53,7 +53,9 @@ C:\Projects\anaconda\_keras> cd keras-frcnn
 C:\Projects\anaconda\_keras\keras-frcnn> python train_frcnn.py --path VOCdevkit
 ```
 
-환경에 따라 훈련 소요 시간이 무척 오래 걸릴 수 있습니다. 필자의 엔비디아 Titan Xp GPU를 사용하는 환경에서 훈련 1회당 약 10분의 시간이 소요되었습니다. 댓글을 남겨 주시면 2000회 훈련된 모델 파일을 공유해 드리겠습니다. (100MB)
+환경에 따라 훈련 소요 시간이 무척 오래 걸릴 수 있습니다. 필자의 엔비디아 Titan Xp GPU를 사용하는 환경에서 훈련 1회당 약 10분의 시간이 소요되었습니다. 2000회 훈련된 모델 파일을 아래에서 다운로드 받으실 수 있습니다.
+
+* [frcnn_weight.zip](https://1drv.ms/u/s!AtbRowIzP4wEhO8W0aY9tOIRq3UtWA) (100MB)
 
 예측은 test_frcnn.py를 사용합니다. keras-frcnn 폴더 아래에 images 폴더와 result_imgs 폴더를 생성합니다.
 
