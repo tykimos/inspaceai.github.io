@@ -1,9 +1,9 @@
 # Site settings
 title: InSpace
-url: "https://inspace4u.github.io/dllab"
-baseurl: "/dllab"
+url: "https://inspaceai.github.io"
+baseurl: ""
 motto: Intelligence in Space
-email: inspace.co.kr
+email: hansoli@inspace.re.kr
 description: Intelligence in Space
 
 # Build settings
