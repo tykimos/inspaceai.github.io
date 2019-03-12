@@ -3,7 +3,7 @@ layout: post
 title: "Keras 기반 F-RCNN 실습"
 author: "정한솔"
 date: 2017-09-09 14:00:00
-categories: Lecture
+categories: Tutorials
 comments: true
 ---
 

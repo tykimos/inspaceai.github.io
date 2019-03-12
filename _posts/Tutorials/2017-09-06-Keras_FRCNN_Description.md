@@ -3,7 +3,7 @@ layout: post
 title: "Keras 기반 F-RCNN의 원리"
 author: "정한솔"
 date: 2017-09-06 12:00:00
-categories: Lecture
+categories: Tutorials
 comments: true
 ---
 
@@ -160,7 +160,7 @@ for ii in range(P_cls.shape[1]):
   if cls_name not in bboxes:
     bboxes[cls_name] = []
     probs[cls_name] = []
-    
+
   (x, y, w, h) = ROIs[0, ii, :]
 
 # 중략
@@ -172,7 +172,7 @@ for ii in range(P_cls.shape[1]):
 
   for key in bboxes:
     bbox = np.array(bboxes[key])
-    
+
     new_boxes, new_probs = roi_helpers.non_max_suppression_fast(bbox, np.array(probs[key]), overlap_thresh=0.5)
 ```
 

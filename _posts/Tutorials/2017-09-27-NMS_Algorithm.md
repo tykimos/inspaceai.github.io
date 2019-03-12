@@ -3,7 +3,7 @@ layout: post
 title: "비최대값 억제 (NMS) 알고리즘"
 author: "정한솔"
 date: 2017-09-27 14:00:00
-categories: Lecture
+categories: Tutorials
 comments: true
 ---
 
@@ -48,7 +48,7 @@ boxes는 경계 상자의 정보를 담은 2차원 넘파이(NumPy) 배열, prob
 ```
 
 먼저 각 경계 상자의 넓이를 구합니다. 각 경계 상자의 x1, y1, x2, y2 값을 배열로 추출한 다음에 요소별(element-wise) 연산을 통해 각 경계 상자의 넓이를 갖는 배열을 만듭니다. 그리고 확률 값을 오름차순 정렬한 다음에 그 정렬 결과의 배열 인덱스를 담은 배열을 idxs라는 이름으로 저장합니다.
- 
+
 ```python
     while idxs.size:
         last = len(idxs) - 1

@@ -3,7 +3,7 @@ layout: post
 title: "mAP (Mean Average Precision)"
 author: "정한솔"
 date: 2017-11-07 12:00:00
-categories: Lecture
+categories: Tutorials,Object Detection
 comments: true
 ---
 

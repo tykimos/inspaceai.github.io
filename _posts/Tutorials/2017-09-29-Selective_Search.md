@@ -3,7 +3,7 @@ layout: post
 title: "선택적 탐색"
 author: "정한솔"
 date: 2017-09-29 17:00:00
-categories: Lecture
+categories: Tutorials
 comments: true
 ---
 
