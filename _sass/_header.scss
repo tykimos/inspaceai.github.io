@@ -16,8 +16,10 @@ header {
         width: 1140px;
         margin: 0 auto;
         line-height: 52px;
-        .brand {
-            font-size: 18px;
+        .logo {
+            height: 32px;
+            filter: grayscale(1) invert(1);
+            margin-bottom: -8px;
         }
         small {
             margin-left: 26px;
