@@ -4,7 +4,7 @@ title: "Keras 기반 F-RCNN 실습"
 author: "정한솔"
 date: 2017-09-09 14:00:00
 categories: Tutorials
-comments: true
+tags: 객체검출, FRCNN
 ---
 
 본 포스트에서는 [Keras 기반으로 구현한 Faster RCNN](https://github.com/inspace4u/keras-frcnn) 코드를 직접 실행 및 실습해 보겠습니다.
@@ -72,6 +72,6 @@ C:\Projects\anaconda\_keras\keras-frcnn> python test_frcnn.py --path images
 
 result_imgs 폴더에 결과 파일이 출력되는 것을 볼 수 있습니다.
 
-![result of frcnn prediction #1]({{ "/images/2017-09-19-result1.png" | prepend: site.baseurl }})
-![result of frcnn prediction #2]({{ "/images/2017-09-19-result2.png" | prepend: site.baseurl }})
-![result of frcnn prediction #3]({{ "/images/2017-09-19-result3.png" | prepend: site.baseurl }})
+![result of frcnn prediction #1]({{ "/images/2017/result1.png" | prepend: site.baseurl }})
+![result of frcnn prediction #2]({{ "/images/2017/result2.png" | prepend: site.baseurl }})
+![result of frcnn prediction #3]({{ "/images/2017/result3.png" | prepend: site.baseurl }})
