@@ -4,6 +4,7 @@ title: "Keras 기반 F-RCNN의 원리"
 author: "정한솔"
 date: 2017-09-06 12:00:00
 categories: Review
+sub-categories: ImageProcessing
 tags: 객체검출 FRCNN
 ---
 
