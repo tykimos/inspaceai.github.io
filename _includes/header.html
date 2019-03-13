@@ -1,54 +1,34 @@
-<header class="header">
-	<div class="header-container">
-		<div class="nav">
-			<li>
-				<a href="{{ "/index.html" | prepend: site.baseurl }}"><img src="{{ "/images/logo.png" | prepend: site.baseurl }}" style="height: 32px" /></a>
-			</li>
-			{% if page.path == "index.html" %}
-			<span class="title">
-				<li>
-					<a href="{{ "/index.html" | prepend: site.baseurl }}">home</a>
-				</li>
-			</span>
-			{% else %}
-				<li>
-					<a href="{{ "/index.html" | prepend: site.baseurl }}">home</a>
-				</li>			
-			{% endif %}
-			{% if page.path == "archive.html" %}
-			<span class="title">
-				<li>
-					<a href="{{ "/archive.html" | prepend: site.baseurl }}">archive</a>
-				</li>
-			</span>			
-			{% else %}
-				<li>
-					<a href="{{ "/archive.html" | prepend: site.baseurl }}">archive</a>
-				</li>			
-			{% endif %}
-			{% if page.path == "category.html" %}
-			<span class="title">
-				<li>
-					<a href="{{ "/category.html" | prepend: site.baseurl }}">category</a>
-				</li>
-			</span>			
-			{% else %}
-				<li>
-					<a href="{{ "/category.html" | prepend: site.baseurl }}">category</a>
-				</li>			
-			{% endif %}
-			{% if page.path == "about.html" %}
-			<span class="title">
-				<li>
-					<a href="{{ "/about.html" | prepend: site.baseurl }}">about</a>
-				</li>
-			</span>			
-			{% else %}
-				<li>
-					<a href="{{ "/about.html" | prepend: site.baseurl }}">about</a>
-				</li>			
-			{% endif %}
-		</div>
-		<div class="description"> {{ site.motto }} </div>		
-	</div>
+<header id="top">
+    <div class="wrapper">
+        <a href="{{ site.baseurl }}/" class="brand">{{ site.title }}</a>
+        <small>{{site.brief-intro}}</small>
+        <button id="headerMenu" class="menu"><i class="fa fa-bars"></i></button>
+        <nav id="headerNav">
+            <ul>
+                <li>
+                    {% if page.url == '/' %}
+                    <a class="active" href="{{site.baseurl}}/">
+                        {% else %}
+                    <a href="{{site.baseurl}}/">
+                    {% endif %}
+                        <i class="fa fa-home"></i>Home
+                    </a>
+                </li>
+
+                {% for my_page in site.pages %}
+                    {% if my_page.type == 'page' %}
+                    <li>
+                        {% if my_page.url == page.url %}
+                        <a class="active" href="{{ my_page.url | prepend: site.baseurl }}">
+                            {% else %}
+                        <a href="{{ my_page.url | prepend: site.baseurl }}">
+                        {% endif %}
+                            <i class="fa fa-{{my_page.icon}}"></i>{{ my_page.title }}
+                        </a>
+                    </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </nav>
+    </div>
 </header>

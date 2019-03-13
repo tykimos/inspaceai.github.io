@@ -2,15 +2,25 @@
 title: InSpace
 url: "https://inspaceai.github.io"
 baseurl: ""
-motto: Intelligence in Space
+brief-intro: Intelligence in Space
 email: hansoli@inspace.re.kr
 description: Intelligence in Space
+permalink: /:year/:month/:day/:title/
 
 # Build settings
 markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
 
 # post future
 future: true
 
+# comment
+disqus: abc
+
 # pagination
+category_dir: category/
+tag_dir: tag/
+gems: [jekyll-paginate]
 paginate: 10
